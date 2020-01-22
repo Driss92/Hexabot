@@ -71,8 +71,17 @@ int main(int argc, char **argv)
 
 
 
+<<<<<<< HEAD
   ros::Publisher orientation_pub = n.advertise<geometry_msgs::Point>("/vect_orientation", 10);  //Second argument changed to 1:
   ros::Publisher position_pub = n.advertise<geometry_msgs::Point>("/vect_position", 10);        //We always want the newest values.
+=======
+  ros::Publisher orientation_pub = n.advertise<geometry_msgs::Point>("/vect_orientation", 1000);
+  ros::Publisher position_pub = n.advertise<geometry_msgs::Point>("/vect_position", 1000);
+
+
+  ros::Publisher orientation_pub = n.advertise<geometry_msgs::Point>("/vect_orientation", 1);  //Second argument changed to 1:
+  ros::Publisher position_pub = n.advertise<geometry_msgs::Point>("/vect_position", 1);        //We always want the newest values.
+>>>>>>> update 22/01
   
 
   ros::Subscriber sub1 = n.subscribe("/phantomx/imu", 1, chatter_callback);
