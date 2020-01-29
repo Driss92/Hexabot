@@ -26,7 +26,7 @@ git status
 ```
 Ajouter les modifications et suivre les fichiers créés.
 ```sh
-git add FILES
+git add FILESgit
 ```
 Enregistrer les modifications localement.
 ```sh
