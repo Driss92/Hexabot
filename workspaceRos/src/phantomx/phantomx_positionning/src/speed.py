@@ -30,7 +30,7 @@ if __name__ == '__main__':
   acceleration = []
   vitesse_init = 0. 
   delta_t = np.array([0.1,0.1,0.1])
-  X,Y,Z = 0 , 0 , 0
+  x,y,z = 0 , 0 , 0
   node_name = 'speed'
   rospy.init_node(node_name)
   rospy.loginfo("{} is launched".format(node_name))
@@ -40,10 +40,10 @@ if __name__ == '__main__':
   pub_speed = rospy.Publisher('linear_velocity', Point, queue_size=10)
   
   
-  rospy.Subscriber("/phantomx/imu", Vector3, sub_acceleration)
-  acceleration.append(X)
-  acceleration.append(Y)
-  acceleration.append(Z)
+  rospy.Subscriber("/phantomx/imu", Imu, sub_acceleration)
+  acceleration.append(x)
+  acceleration.append(y)
+  acceleration.append(z)
   vitesse = integration(acceleration,delta_t,vitesse_init)
 
   while not rospy.is_shutdown():
